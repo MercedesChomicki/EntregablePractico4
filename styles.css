@@ -181,6 +181,7 @@ button:hover{
 .section1 .fondo1{
     width: 100%;
     animation: fade-bottom 6s ease-in;
+    transition: width 4s;
 }
 
 .section1 .build-left{
@@ -191,6 +192,7 @@ button:hover{
     left: 0;
     top: 5%;
     animation: fade-left 5s ease-in;
+    transition: top 4s;
 }
 
 .section1 .build-center{
@@ -200,6 +202,7 @@ button:hover{
     left: 30.10%; 
     top: 73.3%;
     animation: fade-bottom 4s ease-in;
+    transition: width 8s, top 8s;
 }
 
 .section1 .build-right{
@@ -209,6 +212,7 @@ button:hover{
     top: 0; 
     right: 0;
     animation: fade-right 5s ease-in;
+    transition: top 4s;
 }
 
 .spider-girl, .spider-red, .spider-blue{
@@ -221,6 +225,7 @@ button:hover{
     left: 7.03%;
     width: 28.125%;
     animation: fade-bottom 4s ease-in;
+    transition: top 3s, left 3s;
 }
 
 .spider-red{
@@ -228,6 +233,7 @@ button:hover{
     left: 31.56%;
     width: 36.32%;
     animation: fade-bottom 5s ease-in;
+    transition: top 3s;
 }
 
 .spider-blue{
@@ -235,6 +241,7 @@ button:hover{
     left: 54.29%;
     width: 30.7%;
     animation: fade-bottom 3s ease-in;
+    transition: top 2s, left 2s;
 }
 
 .spider-web-left, .spider-web-right{
@@ -247,6 +254,7 @@ button:hover{
     left: -12.5%;
     width: 57%;
     animation: fade-left 4s ease-in;
+    transition: top 2s;
 }
 
 .spider-web-right{
@@ -254,6 +262,7 @@ button:hover{
     right: 0;
     width: 23%;
     animation: fade-right 3s ease-in;
+    transition: top 2s, right 2s;
 }
 
 /* SECTION 2 */
@@ -265,7 +274,7 @@ button:hover{
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    top: -50px;
+    top:-60px;
     color: var(--white);
 }
 
@@ -296,8 +305,8 @@ button:hover{
 .section2 .smurf{
     position: absolute;
     right: 15px;
-    top: 12.5%;
     width: 43.2%;
+    transition: top 3s;
 }
 
 /* SECTION 3 */
@@ -317,25 +326,28 @@ button:hover{
     height: 800px;
 }
 
-.card1, .card2, .card3{
+.section3-card{
     position: absolute;
     width: 26.01%;
     height: auto;
+    opacity: 0;
+    top: 400px;
+    transition: top 4s, opacity 8s;
 }
 
-.card1{
+.section3-card1{
     left: 0;
 }
 
-.card2{
+.section3-card2{
     left: 373.5px;
 }
 
-.card3{
+.section3-card3{
     left: 743px;
 }
 
-.card1 p, .card2 p, .card3 p{
+.section3-card p{
     width: 333px;
     color: var(--black);
     padding: 18px 0 0 0;
@@ -354,39 +366,37 @@ button:hover{
     z-index: 30;
 }
 
-.test0, .test1, .test2{
+.section4-card{
     position: absolute;
     z-index: 50;
     left: 7%;
+    transition: top .8s, transform .8s;
 }
 
-.test0{
-    top: -25.5%;
-    width: 44%;
-    height: auto;
-    transition: width 1s ;
+.section4-card img{
+    width: 600px;
+    transition: width .8s, transform .8s;
 }
 
-.test0 img{
-    width: 100%;
-    height: 100%;
+.section4-card img:hover {
+    width: 650px;
+    transform: rotateZ(5deg);
 }
 
-.test0:hover{
+.section4-card0{
+    top: 0;
     width: 50%;
-    transform: skewX(20deg);
+    height: auto;
 }
 
-.test1{
-    top: 0%;
-    width: 42.43%;
+.section4-card1{
+    top: 30%;
     width: 44.5%;
     height: auto;
 }
 
-.test2{
-    top: 30%;
-    width: 42.66%;
+.section4-card2{
+    top: 60%;
     width: 47%;
     height: auto;
 }
@@ -533,12 +543,20 @@ button:hover{
     line-height: 94.5%;
 }
 
+.text{
+    transition: opacity 3s;
+}
+
 .text1{
     opacity: 1;
 }
 
 .text2, .text3, .text4{
     opacity: 0;
+}
+
+.section6-img{
+    transition: opacity 3s;
 }
 
 .section6-img1{
