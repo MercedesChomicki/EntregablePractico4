@@ -58,15 +58,15 @@ document.addEventListener("scroll", function () {
       section4Card1 = document.querySelector(".section4-card1"),
       section4Card2 = document.querySelector(".section4-card2");
   
-  if(window.scrollY < 1780){
+  if(window.scrollY < 1900){
     section4Card0.style.top= "0";
     section4Card1.style.top= "30%";
     section4Card2.style.top = "60%";
   }
-  if (window.scrollY > 1780 && window.scrollY < 2600) {
+  if (window.scrollY > 1900 && window.scrollY < 2600) {
     section4Card0.style.top = "-30%";
   } 
-  if (window.scrollY > 1980 && window.scrollY < 2800) {
+  if (window.scrollY > 2100 && window.scrollY < 2800) {
     section4Card1.style.top = "0";
   }
   if (window.scrollY > 2180 && window.scrollY < 3000) {
@@ -77,7 +77,6 @@ document.addEventListener("scroll", function () {
     section4Card1.style.top= "-30%";
     section4Card2.style.top = "0";
   }
-
  
 });
 
