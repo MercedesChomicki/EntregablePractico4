@@ -82,6 +82,7 @@ button:hover{
 .logo{
     position: absolute;
     left: 25.78%;
+    top: 30%;
     transition: all 0.3s;
 }
 
@@ -105,16 +106,164 @@ button:hover{
     filter: drop-shadow(4px 5px 0px #02187E);
 }
 
-.btn-dropdown .line1{
+.line:nth-child(1) {
     top: 25px;
+    animation: line1-inicio 0.4s forwards;
 }
-
-.btn-dropdown .line2{
+  
+.line:nth-child(2) {
     top: 36px;
+    animation: line2-inicio 0.4s forwards;
+}
+  
+.line:nth-child(3) {
+    top: 47px;
+    animation: line3-inicio 0.4s forwards;
 }
 
-.btn-dropdown .line3{
-    top: 47px;
+
+@keyframes line1-inicio{
+    0% {
+        transform: translateY(50%) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes line2-inicio{
+    0% { 
+        transform: scale(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes line3-inicio{
+    0% { 
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+        
+    }
+}
+
+/* Anima la transición de hamburguesa a cruz */
+.btn-dropdown.active .line:nth-child(1) {
+    top: 30px;
+    animation: line1 0.4s forwards;
+}
+  
+.btn-dropdown.active .line:nth-child(2) {
+    animation: line2 0.4s forwards;
+}
+  
+.btn-dropdown.active .line:nth-child(3) {
+    top: 44px;
+    animation: line3 0.4s forwards;
+    filter: drop-shadow(-2px 2px 0px #02187E);
+}
+
+@keyframes line1{
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(50%) rotate(45deg);
+    }
+}
+
+@keyframes line2{
+    0% { 
+        transform: translateY(0);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes line3{
+    0% { 
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+}
+
+.dropdown-content{
+    display: none;
+    list-style: none;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    width: 16vw;
+    height: 22vh;
+    z-index: 1000;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 2% 0 3% 50px;
+    background-color:#5499f9cd;
+    border-radius: 0 0 20px 0;
+    /* border-right: 5px solid var(--blue);
+    border-bottom: 5px solid var(--blue); */
+}
+
+.show{
+    display: block;
+}
+
+.dropdown-content li {
+    position: absolute;
+    left: -12vw;
+}
+
+.dropdown-content.show .item1{
+    animation: items 0.3s forwards;
+} 
+.dropdown-content.show .item2{
+    animation: items 0.5s forwards;
+}
+.dropdown-content.show .item3{
+    animation: items 0.7s forwards;
+}
+.dropdown-content.show .item4{
+    animation: items 0.9s forwards;
+}
+
+@keyframes items{
+    0%{
+        left: -12vw;
+        opacity: 0;
+    }
+    100%{
+        left: 50px;
+        opacity: 1;
+    }
+}
+
+.dropdown-content li a{
+    text-decoration: none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 5px;
+}
+
+.dropdown-content li a:hover {
+    width: 154px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content li a p{
+    /* z-index: 60; */
+    /* margin-left: 15%; */
+    /* padding-bottom: 8px; */
+    color: var(--blue);
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .btn-comprar{
@@ -611,10 +760,12 @@ button:hover{
     height: 720px;
     background-color: var(--white);
     clip-path: polygon(0 19%, 100% 0, 100% 100%, 0 100%);
+
 }
 
 .section8-img1, .section8-img2, .section8-img3{
     position: absolute;
+    transition: all 1s;
 }
 
 .section8-img1{
@@ -858,22 +1009,6 @@ button:hover{
         opacity: 1;
     }
 }
-
-/* .section9-imagen-img1{
-    position: absolute;
-    bottom: 10%;
-    left: 17.10%;
-    width: 7.57%;
-    height: auto;
-} */
-
-/* .section9-imagen-img2{
-    position: absolute;
-    bottom: 22.5%;
-    left: 41.64%;
-    width: 4.53%;
-    height: auto;
-} */
 
 /* SECTION 10 */
 

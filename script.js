@@ -1,3 +1,17 @@
+// NAV
+let btnMenu = document.getElementById('btn-menu');
+btnMenu.addEventListener('click', ()=>{
+    document.querySelector(".btn-dropdown").classList.toggle("active");
+    document.getElementById('dropdown-content').classList.toggle("show");
+})
+
+// Contenido de menu
+let cant = 20;
+document.querySelectorAll(".dropdown-content li").forEach((li)=>{
+  li.style.top = `${cant}px`;
+  cant += 40
+})
+
 document.addEventListener("scroll", function () {
   console.log(window.scrollY);
   /* NAVBAR */
@@ -7,7 +21,8 @@ document.addEventListener("scroll", function () {
     logo.style.width = "10%";  // tamaño cuando se ha hecho scroll
     logo.style.top = "12%";
     logo.style.left = "40%"; 
-  } else {
+  } 
+  if(window.scrollY < 50) {
     logo.style.width = "46.09%"; // tamaño original cuando no se ha hecho scroll
     logo.style.top = "75%";
     logo.style.left = "25.78%";
@@ -215,3 +230,85 @@ function section6(){
 }
 
 section6();
+
+function section8(){
+  let spiderGirl = document.getElementById("spiderGirl"),
+      spiderRed =  document.getElementById("spiderRed"),
+      spiderBlue =  document.getElementById("spiderBlue"),
+      container = document.getElementById("section8-container");
+
+      spiderGirl.addEventListener("mouseover", ()=>{
+        spiderGirl.style.width = "30%";
+        spiderGirl.style.top = "100px";
+        spiderRed.style.width = "25.23%";
+        spiderRed.style.left = "42%";
+        spiderRed.style.top = "230px";
+        spiderBlue.style.width = "19%";
+        spiderBlue.style.left = "65%";
+        spiderBlue.style.top = "230px";
+        spiderRed.style.filter= "blur(4px)";
+        spiderBlue.style.filter= "blur(4px)";
+        container.style.background = "#f3c5e3";
+      })
+
+      spiderGirl.addEventListener("mouseleave", ()=>{
+        originalState();
+      })
+
+      spiderRed.addEventListener("mouseover", ()=>{
+        spiderGirl.style.width = "17.18%";
+        spiderGirl.style.top = "300px";
+        spiderGirl.style.left = " 14.84%";
+        spiderRed.style.width = "45%";
+        spiderRed.style.top = "100px";
+        spiderRed.style.left = "25%";
+        spiderBlue.style.width = "19%";
+        spiderBlue.style.left = "70%";
+        spiderBlue.style.top = "330px";
+        spiderGirl.style.filter= "blur(4px)";
+        spiderBlue.style.filter= "blur(4px)";
+        container.style.background = "#a9c9ff";
+      })
+
+      spiderRed.addEventListener("mouseleave", ()=>{
+        originalState();
+      })
+
+      
+      spiderBlue.addEventListener("mouseover", ()=>{
+        spiderGirl.style.width = "17.18%";
+        spiderGirl.style.top = "220px";
+        spiderGirl.style.left = "22%";
+        spiderRed.style.width = "25.23%";
+        spiderRed.style.top = "220px";
+        spiderRed.style.left = "35%";
+        spiderBlue.style.width = "38.82%";
+        spiderBlue.style.left = "54%";
+        spiderBlue.style.top = "30px";
+        spiderGirl.style.filter= "blur(4px)";
+        spiderRed.style.filter= "blur(4px)";
+        container.style.background = "#cbd0d8";
+      })
+
+      spiderBlue.addEventListener("mouseleave", ()=>{
+        originalState();
+      })
+
+      function originalState(){
+        spiderGirl.style.width = "20.93%";
+        spiderGirl.style.top = "180px";
+        spiderGirl.style.left = " 14.84%";
+        spiderRed.style.width = "32.53%";
+        spiderRed.style.left = "30.78%";
+        spiderRed.style.top = "180px";
+        spiderBlue.style.width = "24.49%";
+        spiderBlue.style.left = "60.7%";
+        spiderBlue.style.top = "180px";
+        spiderGirl.style.filter= "blur(0)";
+        spiderRed.style.filter= "blur(0)";
+        spiderBlue.style.filter= "blur(0)";
+        container.style.background = "var(--white)";
+      }
+}
+
+section8();
