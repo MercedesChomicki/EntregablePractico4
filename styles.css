@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 body{
     max-width: 100%;
     --white: #FFFFFF;
@@ -14,7 +15,6 @@ body{
     --font-size-button: 20px;
     --outline: #2982FF;
     --border-radius: 111px;
-    margin: 0 auto;
 }
 
 h1, h2, p{
@@ -187,6 +187,7 @@ button:hover{
     animation: line3-inicio 0.4s forwards;
 }
 
+/* Valores iniciales de las lineas del menú hamburguesa */
 
 @keyframes line1-inicio{
     0% {
@@ -232,6 +233,7 @@ button:hover{
     filter: drop-shadow(-2px 2px 0px #02187E);
 }
 
+/* La linea 1 se inclina hacia abajo a la derecha */
 @keyframes line1{
     0% {
         transform: translateY(0) rotate(0);
@@ -241,6 +243,7 @@ button:hover{
     }
 }
 
+/* La linea 2 desaparece */
 @keyframes line2{
     0% { 
         transform: translateY(0);
@@ -250,6 +253,7 @@ button:hover{
     }
 }
 
+/* La linea 3 se inclina hacia arriba a la derecha */
 @keyframes line3{
     0% { 
         transform: translateY(0) rotate(0);
@@ -296,6 +300,7 @@ button:hover{
     animation: items 0.9s forwards;
 }
 
+/* Los items del menu, va apareciendo progresivamente desde la izquierda */
 @keyframes items{
     0%{
         left: -12vw;
@@ -353,39 +358,6 @@ button:hover{
 
 .section1.active {
     opacity: 1;
-}
-
-@keyframes fade-bottom {
-    0% {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-left {
-    0% {
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-right {
-    0% {
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 
 .section1 .fondo1{
@@ -473,6 +445,43 @@ button:hover{
     width: 23%;
     animation: fade-right 3s ease-in;
     transition: top 2s, right 2s;
+}
+
+
+/* Aparicion progresiva desde abajo de las imagenes que contienen esta animacion */
+@keyframes fade-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Aparicion progresiva desde la izquierda de las imagenes que contienen esta animacion */
+@keyframes fade-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Aparicion progresiva desde la derecha de las imagenes que contienen esta animacion */
+@keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 /* SECTION 2 */
@@ -654,7 +663,7 @@ button:hover{
 .img1-1{
     margin-top: 44.7%;
     margin-left: -5px;
-    transform: scaleX(-1);
+    transform: scaleX(-1); /* volteamos la imagen para que quede en espejo con la img1 */
 }
 
 .img2, .img3, .img4, .img5, .img6{
@@ -956,11 +965,8 @@ button:hover{
 
 .section9-imagen .spritesheet-spider{
      /* Tamaño de la viñeta individual */
-     /* width:64px; */
      width: 49px;
-     /* height:187px; */
      height: 194px;
-     /* background:url(images/ezgif.com-gif-maker.png); */
      background:url(images/spritesheet-spider.png);
      /* Aplicamos la animación "climb": 3seg, 10 viñetas y repetimos infinitamente */
      animation:climb 3s steps(10) infinite;
@@ -970,16 +976,15 @@ button:hover{
 }
 
 
-/* Animación de personaje escalando: Se mueve el sprite sheet hacia la izquierda y hacia arriba, realizando el movimiento. Se rota la img para que coincida con el edificio*/
+/* Animación de personaje escalando: Se mueve el sprite sheet hacia la izquierda y hacia arriba, realizando el movimiento. Se rota la img para que coincida con la verticalidad del edificio*/
 @keyframes climb {
     0% { 
         background-position: 0;
         bottom: -10px;  
         transform: rotate(0deg);
     }
-    /* El tamaño total de ancho del sprite. Es negativo para que no "escale" hacia atrás */
+    /* El tamaño total de ancho del sprite es negativo para que no "escale" hacia atrás */
     50% { 
-        /* background-position: -640px; */
         background-position: -490px;
         bottom: 400px; 
         right: 130px; 
@@ -994,14 +999,10 @@ button:hover{
 }
 
 .section9-imagen .spritesheet-spider:hover{
-    /* width:87px; */
     width:72px;
-    /* height:297px; */
     height:246px;
-    /* background:url(images/spider-spritesheet-2.png); */
     background:url(images/spritesheet-spider-hover.png);
     animation:throw 3s steps(20) infinite;
-    /* bottom: 50px; */
     bottom: 100px;
     right: 120px;
 }
@@ -1011,29 +1012,22 @@ button:hover{
         background-position: 0;
     }
     100% { 
-        /* background-position: -1740px; */
         background-position: -1440px;
     }
 }
 
 
 .section9-imagen .spritesheet-spider-blue{
-    /* Tamaño de la viñeta individual */
     width: 96px;
     height: 110px;
-    /* background:url(images/ezgif.com-gif-maker.png); */
     background:url(images/spritesheet-spider-blue.png);
-    /* Aplicamos la animación "climb": 3seg, 10 viñetas y repetimos infinitamente */
     animation:hang 2s steps(5) infinite;
-    /* Posicionamos el personaje sobre el edificio */
     position: absolute;
     top: 600px;
     left: 25%;
     z-index: 100;
 }
 
-
-/* Animación de personaje escalando: Se mueve el sprite sheet hacia la izquierda y hacia arriba, realizando el movimiento. Se rota la img para que coincida con el edificio*/
 @keyframes hang {
    0% { 
         background-position: 0;
@@ -1052,22 +1046,16 @@ button:hover{
 }
 
 .section9-imagen .spritesheet-spider-girl{
-    /* Tamaño de la viñeta individual */
     width: 48px;
     height: 79px;
-    /* background:url(images/ezgif.com-gif-maker.png); */
     background:url(images/ghost-spider.png);
-    /* Aplicamos la animación "climb": 3seg, 10 viñetas y repetimos infinitamente */
     animation:girl 2s steps(32) infinite;
-    /* Posicionamos el personaje sobre el edificio */
     position: absolute;
     bottom: 21.8%;
     left: 41.64%;
     opacity: 0;
 }
 
-
-/* Animación de personaje escalando: Se mueve el sprite sheet hacia la izquierda y hacia arriba, realizando el movimiento. Se rota la img para que coincida con el edificio*/
 @keyframes girl {
     0% { 
         background-position: 0;

@@ -1,10 +1,18 @@
 "use strict"
 
 document.addEventListener("DOMContentLoaded", function() {
+
   setTimeout(function() {
     document.getElementById('body-page-loading').style.display = "none";
     document.getElementById('body-page-loaded').style.display = "block";
   }, 3000);
+
+  section1();
+  section2();
+  section3();
+  section5();
+  section6();
+  section8();
 });
 
 let loading = setInterval(animate, 50),
@@ -18,21 +26,21 @@ function animate() {
     textLoading.style.letterSpacing = "2px";
     bodyContainer.style.maxWidth = "100%";
     bodyContainer.style.innerHeight = "auto";
-}
+};
 
 // NAV
 let btnMenu = document.getElementById('btn-menu');
 btnMenu.addEventListener('click', ()=>{
     document.querySelector(".btn-dropdown").classList.toggle("active");
     document.getElementById('dropdown-content').classList.toggle("show");
-})
+});
 
 // Contenido de menu
 let cant = 20;
 document.querySelectorAll(".dropdown-content li").forEach((li)=>{
   li.style.top = `${cant}px`;
   cant += 40
-})
+});
 
 document.addEventListener("scroll", function () {
 
@@ -61,32 +69,32 @@ document.addEventListener("scroll", function () {
       buildRight = document.querySelector(".build-right"),
       buildCenter = document.querySelector(".build-center");
 
-      if(window.scrollY > 0 && window.scrollY < 700){
-        buildLeft.style.top = "2%";
-        buildRight.style.top = "-3%";
-      }
-      if(window.scrollY > 180 && window.scrollY < 700){
-        spiderGirl.style.top = "268px";
-        spiderGirl.style.left = "6%";
-        spiderRed.style.top = "283px";
-        spiderWebLeft.style.top = "275px";
-        spiderBlue.style.top = "213px";
-        spiderBlue.style.left = "56%";
-        spiderWebRight.style.top = "265px"; 
-        buildCenter.style.top = "70%";   
-      } else{
-        spiderGirl.style.top = "288px";
-        spiderGirl.style.left = "7.03%";
-        spiderRed.style.top = "303px";
-        spiderWebLeft.style.top = "290px";
-        spiderBlue.style.top = "235px";
-        spiderBlue.style.left = "54.29%";
-        spiderWebRight.style.top = "300px";
-        buildLeft.style.top = "5%";
-        buildCenter.style.width = "43%";
-        buildCenter.style.top = "73.3%";
-        buildRight.style.top = "0%";
-      }
+  if(window.scrollY > 0 && window.scrollY < 700){
+      buildLeft.style.top = "2%";
+      buildRight.style.top = "-3%";
+  }
+  if(window.scrollY > 180 && window.scrollY < 700){
+      spiderGirl.style.top = "268px";
+      spiderGirl.style.left = "6%";
+      spiderRed.style.top = "283px";
+      spiderWebLeft.style.top = "275px";
+      spiderBlue.style.top = "213px";
+      spiderBlue.style.left = "56%";
+      spiderWebRight.style.top = "265px"; 
+      buildCenter.style.top = "70%";   
+  } else{
+      spiderGirl.style.top = "288px";
+      spiderGirl.style.left = "7.03%";
+      spiderRed.style.top = "303px";
+      spiderWebLeft.style.top = "290px";
+      spiderBlue.style.top = "235px";
+      spiderBlue.style.left = "54.29%";
+      spiderWebRight.style.top = "300px";
+      buildLeft.style.top = "5%";
+      buildCenter.style.width = "43%";
+      buildCenter.style.top = "73.3%";
+      buildRight.style.top = "0%";
+  }
 
 
   /* SECTION 4 */
@@ -118,7 +126,7 @@ document.addEventListener("scroll", function () {
 });
 
 /* SECTION 1 */
-
+// Entrada de elementos
 function section1() {
   let section1 = document.querySelector(".section1");
 
@@ -132,10 +140,6 @@ function section1() {
       section1.classList.remove("active");
     }
 }
-
-// To check the scroll position on page load
-section1();
-
 
 /* SECTION 2 */
 
@@ -155,9 +159,6 @@ function section2(){
         } 
       })
 }
-
-section2();
-
 
 /* SECTION 3 */
 
@@ -190,17 +191,12 @@ function section3(){
       })
 }
 
-section3();
-
 function section5(){
   let img1 = document.querySelector(".img1"),
-      img2 = document.querySelector(".img2"),
-      img3 = document.querySelector(".img3"),
       img4 = document.querySelector(".img4"),
       img5 = document.querySelector(".img5"),
       img6 = document.querySelector(".img6"),
-      _w = window.innerWidth/2, 
-      _h = window.innerHeight/2;
+      _w = window.innerWidth/2;
 
   document.querySelector(".section5-container").addEventListener("mousemove", (e)=>{
     if(e.clientX === _w){
@@ -223,7 +219,6 @@ function section5(){
     }
   })
 }
-section5();
 
 function section6(){
   let textColumn = document.querySelector(".text-column");
@@ -283,8 +278,6 @@ function section6(){
     }
   })
 }
-
-section6();
 
 function section8(){
   let spiderGirl = document.getElementById("spiderGirl"),
@@ -365,5 +358,3 @@ function section8(){
         container.style.background = "var(--white)";
       }
 }
-
-section8();
