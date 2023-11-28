@@ -13,7 +13,7 @@ document.querySelectorAll(".dropdown-content li").forEach((li)=>{
 })
 
 document.addEventListener("scroll", function () {
-  console.log(window.scrollY);
+
   /* NAVBAR */
 
   let logo = document.getElementById("logo");
@@ -168,7 +168,40 @@ function section3(){
       })
 }
 
-section3()
+section3();
+
+function section5(){
+  let img1 = document.querySelector(".img1"),
+      img2 = document.querySelector(".img2"),
+      img3 = document.querySelector(".img3"),
+      img4 = document.querySelector(".img4"),
+      img5 = document.querySelector(".img5"),
+      img6 = document.querySelector(".img6"),
+      _w = window.innerWidth/2, 
+      _h = window.innerHeight/2;
+
+  document.querySelector(".section5-container").addEventListener("mousemove", (e)=>{
+    if(e.clientX === _w){
+      img4.style.left = "2.5%";
+      img5.style.left = "42%";
+      img6.style.left = "62.3%";
+      img1.style.marginLeft = "0";
+    }
+    if(e.clientX > _w){
+      img4.style.left = "-6.5%";
+      img5.style.left = "33%";
+      img6.style.left = "53.3%";
+      img1.style.marginLeft = "10%";
+    }
+    if(e.clientX < _w){
+      img4.style.left = "4.5%";
+      img5.style.left = "44%";
+      img6.style.left = "64.3%";
+      img1.style.marginLeft = "-10%";
+    }
+  })
+}
+section5();
 
 function section6(){
   let textColumn = document.querySelector(".text-column");

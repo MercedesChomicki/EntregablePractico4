@@ -559,7 +559,7 @@ button:hover{
     height: 1025px;
 }
 
-.section5 div{
+.section5 .section5-group{
     width: 1080px;
     height: 1000px;
     position: relative;
@@ -576,20 +576,32 @@ button:hover{
     top: 256px;
 }
 
-.img1, .img2, .img3, .img4, .img5, .img6{
-    position: absolute;
+.section5-container{
+    width: 1079px;
+    overflow-x: hidden;
+}
+
+.section5-container-sky{
+    display: flex;
 }
 
 .img1{
-    top: 482px;
-    left: 0;
-    z-index: 20;
-    width: 100%;
-    height: auto;
-    box-shadow: 30px 40px 25px rgba(0, 0, 0, 0.15);
+    margin-top: 44.7%;
+    transition: all 4s;
+}
+
+.img1-1{
+    margin-top: 44.7%;
+    margin-left: -5px;
+    transform: scaleX(-1);
+}
+
+.img2, .img3, .img4, .img5, .img6{
+    position: absolute;
 }
 
 .img2{
+    box-shadow: 30px 40px 25px rgba(0, 0, 0, 0.15);
     top: 482px;
     left: 0;
     z-index: 30;
@@ -609,18 +621,21 @@ button:hover{
     top: 387px;
     left: 2.5%;
     z-index: 40;
+    transition: all 1s;
 }
 
 .img5{
     top: 227px;
     left: 42%;
     z-index: 40;
+    transition: all 1s;
 }
 
 .img6{
     top: 588px;
     left: 62.3%;
     z-index: 40;
+    transition: all 1s;
 }
 
 /* SECTION 6 */
