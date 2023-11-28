@@ -1,3 +1,25 @@
+"use strict"
+
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    document.getElementById('body-page-loading').style.display = "none";
+    document.getElementById('body-page-loaded').style.display = "block";
+  }, 3000);
+});
+
+let loading = setInterval(animate, 50),
+    loadingBar = document.querySelector(".loading-bar"),
+    textLoading = document.querySelector(".text-loading"),
+    bodyContainer = document.querySelector(".body-container");
+
+function animate() {
+    loadingBar.style.width = "100%";
+    textLoading.style.marginLeft = "100px";
+    textLoading.style.letterSpacing = "2px";
+    bodyContainer.style.maxWidth = "100%";
+    bodyContainer.style.innerHeight = "auto";
+}
+
 // NAV
 let btnMenu = document.getElementById('btn-menu');
 btnMenu.addEventListener('click', ()=>{
